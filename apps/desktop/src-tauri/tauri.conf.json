@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "VocOrbit Desktop",
+  "version": "0.1.0",
+  "identifier": "com.vocorbit.desktop",
+  "build": {
+    "beforeDevCommand": "bun run web",
+    "beforeBuildCommand": "bun run bundle:web",
+    "devUrl": "http://localhost:5055",
+    "frontendDist": "../dist"
+  },
+  "plugins": {
+    "deep-link": {
+      "desktop": {
+        "schemes": ["vocorbit-desktop"]
+      }
+    }
+  },
+  "app": {
+    "withGlobalTauri": false,
+    "windows": [
+      {
+        "label": "main",
+        "create": false,
+        "title": "VocOrbit Desktop",
+        "center": true,
+        "width": 1194,
+        "height": 834,
+        "resizable": false,
+        "maximizable": false,
+        "fullscreen": false
+      }
+    ]
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "macOS": {
+      "minimumSystemVersion": "10.15"
+    },
+    "windows": {
+      "digestAlgorithm": "sha256"
+    }
+  }
+}

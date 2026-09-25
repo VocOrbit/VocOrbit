@@ -1,0 +1,85 @@
+{
+  "expo": {
+    "name": "VocOrbitDesktop",
+    "slug": "vocorbit-desktop",
+    "scheme": "vocorbit",
+    "version": "1.0.10",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "icon": "./assets/images/app-icon-all.png",
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "newArchEnabled": true,
+    "jsEngine": "hermes",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "android": {
+      "icon": "./assets/images/app-icon-android-legacy.png",
+      "package": "com.vocorbit",
+      "versionCode": 7,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/app-icon-android-adaptive-foreground.png",
+        "backgroundImage": "./assets/images/app-icon-android-adaptive-background.png"
+      },
+      "allowBackup": false,
+      "edgeToEdgeEnabled": true
+    },
+    "ios": {
+      "icon": "./assets/images/app-icon-ios.png",
+      "supportsTablet": true,
+      "usesAppleSignIn": true,
+      "bundleIdentifier": "com.vocorbit",
+      "buildNumber": "1"
+    },
+    "web": {
+      "favicon": "./assets/images/app-icon-web-favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-localization",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon-rounded.png",
+          "imageWidth": 220,
+          "resizeMode": "contain",
+          "backgroundColor": "#0B0E16"
+        }
+      ],
+      [
+        "react-native-edge-to-edge",
+        {
+          "android": {
+            "parentTheme": "Light",
+            "enforceNavigationBarContrast": false
+          }
+        }
+      ],
+      "expo-build-properties"
+    ],
+    "experiments": {
+      "tsconfigPaths": true
+    },
+    "extra": {
+      "ignite": {
+        "version": "11.4.0"
+      },
+      "vocorbit": {
+        "APPLE_WEB_CLIENT_ID": "com.vocorbit.desktop.web",
+        "APPLE_WEB_REDIRECT_URI": "https://desktop.vocorbit.com/__/auth/handler",
+        "FIREBASE_PROJECT_ID": "vocorbit-app",
+        "FIREBASE_AUTH_DOMAIN": "desktop.vocorbit.com",
+        "GOOGLE_IOS_CLIENT_ID": "524765990208-dm36v4d6tp701bliv2l3pqk8vnu9ns3l.apps.googleusercontent.com",
+        "GOOGLE_WEB_CLIENT_ID": "524765990208-e3p0t2r338npopmufs3ktesc3nd3u0ib.apps.googleusercontent.com",
+        "BACKEND_API_URL": "",
+        "BACKEND_AUTH_TEST_ID_TOKEN": ""
+      },
+      "eas": {
+        "projectId": "588560a3-5d0e-4614-9e42-d95f0cae925c"
+      }
+    }
+  }
+}

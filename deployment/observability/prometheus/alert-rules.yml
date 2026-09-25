@@ -1,0 +1,121 @@
+groups:
+  - name: app-alerts
+    rules:
+      - alert: APIInstanceDown
+        expr: up{job="api"} == 0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "API instance down"
+          description: "{{ $labels.instance }} has been unreachable for 2 minutes."
+
+      - alert: APIErrorRateHighWarning
+        expr: 100 * sum(rate(http_requests_total{status=~"5.."}[5m])) / clamp_min(sum(rate(http_requests_total[5m])), 0.0001) > 2
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High API error rate"
+          description: "5xx error rate is above 2% for 10 minutes."
+
+      - alert: APIErrorRateHighCritical
+        expr: 100 * sum(rate(http_requests_total{status=~"5.."}[5m])) / clamp_min(sum(rate(http_requests_total[5m])), 0.0001) > 5
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Critical API error rate"
+          description: "5xx error rate is above 5% for 5 minutes."
+
+      - alert: APIP95LatencyHighWarning
+        expr: histogram_quantile(0.95, sum by (le) (rate(http_request_duration_ms_bucket[5m]))) > 800
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High API latency (p95)"
+          description: "P95 latency is above 800ms for 10 minutes."
+
+      - alert: APIP95LatencyHighCritical
+        expr: histogram_quantile(0.95, sum by (le) (rate(http_request_duration_ms_bucket[5m]))) > 1500
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Critical API latency (p95)"
+          description: "P95 latency is above 1500ms for 5 minutes."
+
+  - name: infra-alerts
+    rules:
+      - alert: NodeExporterDown
+        expr: up{job="node_exporter"} == 0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Node exporter down"
+          description: "{{ $labels.instance }} node exporter is unreachable."
+
+      - alert: CAdvisorDown
+        expr: up{job="cadvisor"} == 0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "cAdvisor down"
+          description: "{{ $labels.instance }} cAdvisor is unreachable."
+
+      - alert: HostCPUHighWarning
+        expr: 100 - (avg by (instance) (rate(node_cpu_seconds_total{job="node_exporter",mode="idle"}[5m])) * 100) > 80
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High host CPU usage"
+          description: "{{ $labels.instance }} CPU usage is above 80% for 10 minutes."
+
+      - alert: HostCPUHighCritical
+        expr: 100 - (avg by (instance) (rate(node_cpu_seconds_total{job="node_exporter",mode="idle"}[5m])) * 100) > 90
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Critical host CPU usage"
+          description: "{{ $labels.instance }} CPU usage is above 90% for 5 minutes."
+
+      - alert: HostMemoryHighWarning
+        expr: (1 - (node_memory_MemAvailable_bytes{job="node_exporter"} / node_memory_MemTotal_bytes{job="node_exporter"})) * 100 > 90
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High host memory usage"
+          description: "{{ $labels.instance }} memory usage is above 90% for 10 minutes."
+
+      - alert: HostDiskUsageHigh
+        expr: 100 * (1 - (node_filesystem_avail_bytes{job="node_exporter",mountpoint="/",fstype!~"tmpfs|overlay"} / node_filesystem_size_bytes{job="node_exporter",mountpoint="/",fstype!~"tmpfs|overlay"})) > 85
+        for: 15m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High disk usage on root mount"
+          description: "{{ $labels.instance }} root filesystem usage is above 85% for 15 minutes."
+
+      - alert: WorkerContainerMemoryHighWarning
+        expr: 100 * container_memory_working_set_bytes{job="cadvisor",container_label_com_docker_compose_service=~"worker-1|worker-2"} / clamp_min(container_spec_memory_limit_bytes{job="cadvisor",container_label_com_docker_compose_service=~"worker-1|worker-2"}, 1) > 85
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Worker container memory high"
+          description: "{{ $labels.container_label_com_docker_compose_service }} memory usage is above 85% of limit for 10 minutes."
+
+      - alert: WorkerContainerFrequentRestarts
+        expr: changes(container_start_time_seconds{job="cadvisor",container_label_com_docker_compose_service=~"worker-1|worker-2"}[15m]) > 2
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Worker container restarting frequently"
+          description: "{{ $labels.container_label_com_docker_compose_service }} restarted multiple times in the last 15 minutes."

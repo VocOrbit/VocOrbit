@@ -1,0 +1,1 @@
+export const WORD_INSIGHT_LIST_PAGE_LIMIT = 50

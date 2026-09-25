@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-close-quick-lookup-window"
+description = "Enables the close_quick_lookup_window command without any pre-configured scope."
+commands.allow = ["close_quick_lookup_window"]
+
+[[permission]]
+identifier = "deny-close-quick-lookup-window"
+description = "Denies the close_quick_lookup_window command without any pre-configured scope."
+commands.deny = ["close_quick_lookup_window"]

@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ESNext", "DOM"],
+    "strict": true,
+    "noImplicitAny": true,
+    "noUncheckedIndexedAccess": true,
+    "skipLibCheck": true,
+    "types": ["bun-types"],
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "apps/api/**/*.ts",
+    "modules/**/*.ts",
+    "infra/**/*.ts",
+    "packages/**/*.ts",
+    "packages/**/*.d.ts",
+    "scripts/**/*.ts",
+    "drizzle.config.ts"
+  ]
+}

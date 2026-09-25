@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "vocorbit-app"
+  },
+  "targets": {
+    "vocorbit-app": {
+      "hosting": {
+        "desktop": [
+          "vocorbit-desktop"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

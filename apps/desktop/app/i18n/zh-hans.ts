@@ -1,0 +1,781 @@
+import { Translations } from "./en"
+
+const zhHans: Translations = {
+  "common": {
+    "ok": "好的！",
+    "cancel": "取消",
+    "back": "后退",
+    "logOut": "退出"
+  },
+  "welcomeScreen": {
+    "postscript": "psst — 这可能不是您的应用程序的样子。 （除非您的设计师将这些屏幕交给您，在这种情况下，请发货！）",
+    "readyForLaunch": "您的应用程序即将发布！",
+    "exciting": "（哦，这太令人兴奋了！）",
+    "letsGo": "我们走吧！"
+  },
+  "errorScreen": {
+    "title": "出了问题！",
+    "friendlySubtitle": "这是您的用户在生产中抛出错误时将看到的屏幕。您需要自定义此消息（位于 `app/i18n/en.ts` 中），也可能需要自定义布局 (`app/screens/ErrorScreen`)。如果您想完全删除它，请检查 `app/app.tsx` 中的 <ErrorBoundary> 组件。",
+    "reset": "重置应用程序",
+    "traceTitle": "来自 %{name} 堆栈的错误"
+  },
+  "emptyStateComponent": {
+    "generic": {
+      "heading": "如此空虚……如此悲伤",
+      "content": "尚未找到数据。尝试单击按钮刷新或重新加载应用程序。",
+      "button": "让我们再试一次"
+    }
+  },
+  "errors": {
+    "invalidEmail": "电子邮件地址无效。"
+  },
+  "loginScreen": {
+    "logIn": "登录",
+    "subtitle": "继续使用您的社交帐户来查看您的词汇进度。",
+    "continueWith": "继续",
+    "regionTitle": "地区",
+    "regionSubtitle": "当前： {{region}}",
+    "regionNotSelected": "未选择",
+    "changeRegion": "改变",
+    "signingIn": "正在登录...",
+    "googleButton": "谷歌",
+    "appleButton": "苹果（很快）",
+    "moreProvidersSoon": "更多提供商即将推出。",
+    "accessibility": {
+      "openRegionSelection": "开放区域选择"
+    },
+    "errors": {
+      "unauthorized": "认证失败。请重新登录。",
+      "cannotConnect": "无法连接到服务器。请再试一次。",
+      "server": "服务器验证失败。请稍后重试。",
+      "rejected": "登录请求被拒绝。请验证身份验证配置。",
+      "badData": "从服务器收到意外响应。",
+      "generic": "无法完成登录。请重试。",
+      "googleCancelled": "Google 登录已取消。",
+      "googleUnavailable": "此设备上无法使用 Google 登录。",
+      "googleFailed": "谷歌登录失败。请再试一次。"
+    }
+  },
+  "languagePreferences": {
+    "titleOnboarding": "选择您的语言对",
+    "titleSettings": "语言偏好",
+    "subtitleOnboarding": "从包含国旗和国家/地区的全球列表中选择您的母语和目标语言。",
+    "subtitleSettings": "使用国旗和国家/地区信息在此处更新您的母语和目标语言。",
+    "currentPair": "当前对",
+    "availableOptionsCount": "{{count}} 可用语言/国家/地区选项",
+    "nativeLanguageTitle": "母语",
+    "nativeLanguageBody": "翻译和解释将以这种语言显示。",
+    "learningLanguageTitle": "学习语言",
+    "learningLanguageBody": "定义和上下文将以这种语言生成。",
+    "selectedLabel": "已选择",
+    "pickerTitleL1": "选择母语",
+    "pickerTitleL2": "选择学习语言",
+    "searchPlaceholder": "搜索语言或国家",
+    "noResults": "没有找到结果。",
+    "saving": "保存...",
+    "continue": "继续",
+    "save": "节省",
+    "accessibility": {
+      "goBack": "回去",
+      "selectNativeLanguage": "选择母语",
+      "selectLearningLanguage": "选择学习语言",
+      "continueWithSelectedLanguages": "继续选择语言",
+      "saveLanguages": "保存语言",
+      "closeLanguagePicker": "关闭语言选择器",
+      "closePicker": "关闭选择器",
+      "selectLanguageItem": "选择 {{language}} {{country}}"
+    },
+    "errors": {
+      "cannotConnect": "无法连接到服务器。请再试一次。",
+      "unauthorized": "会话无效。请重新登录。",
+      "validation": "无法保存语言首选项。请检查您的输入。",
+      "server": "服务器发生错误。请稍后重试。",
+      "saveFailed": "无法保存语言首选项。请再试一次。",
+      "noSession": "未找到活动会话。请重新登录。",
+      "selectTwoLanguages": "请选择两种语言。",
+      "sameLanguagePair": "母语和学习语言不能相同。"
+    }
+  },
+  "vocabulary": {
+    "common": {
+      "retry": "重试",
+      "signIn": "登入",
+      "favoriteLabel": "最喜欢的",
+      "learnedLabel": "学到了",
+      "detailButton": "打开详情"
+    },
+    "welcome": {
+      "badge": "沃科比特",
+      "title": "VocOrbit 的实际工作原理",
+      "subtitle": "真实流程：在应用程序外选择一个句子，选择一个单词，然后根据 VocOrbit 内的上下文来学习它。",
+      "progress": "步骤 {{current}} / {{total}}",
+      "progressSingle": "步骤 {{current}}",
+      "mock": {
+        "contextLabel": "上下文句子",
+        "selectedWordLabel": "所选单词",
+        "meaningLabel": "基本含义",
+        "whyLabel": "为什么在这种背景下"
+      },
+      "flowTitle": "快速了解流程的3个步骤",
+      "highlightsTitle": "你得到什么",
+      "actions": {
+        "previous": "以前的",
+        "next": "下一步",
+        "enterApp": "开始学习",
+        "showExample": "Show example",
+        "hideExample": "隐藏示例"
+      },
+      "steps": {
+        "step1": {
+          "step": "步骤 1 • 分享一个句子",
+          "title": "选择该单词出现的句子",
+          "body": "长按浏览器、笔记或任何应用程序中的文本并将其发送到 VocOrbit Share Extension。",
+          "source": "当我回首往事时，我再次感叹文学的赋予生命的力量。",
+          "word": "文学",
+          "meaning": "书面作品，尤其是那些被认为具有艺术性的作品",
+          "why": "在这句话中，它指的是对说话者产生强烈影响的书籍和书面艺术。",
+          "hint": "提示：始终分享完整的句子，而不仅仅是单个单词。",
+          "bullets": {
+            "one": "适用于浏览器、笔记和许多阅读应用程序",
+            "two": "你保留原来的句子上下文",
+            "three": "无需手动复制粘贴流程"
+          }
+        },
+        "step2": {
+          "step": "步骤 2 • 选择准确的单词",
+          "title": "点击一个单词即可立即了解基本含义",
+          "body": "在共享视图中，可以点击文字。选择一个目标词并运行基本洞察。",
+          "source": "阅读不应该被视为孩子们的一项苦差事、一项义务。",
+          "word": "杂务",
+          "meaning": "例行任务，通常令人不愉快",
+          "why": "这里的“家务”强调阅读一定不能让人感觉像是被迫的工作。",
+          "hint": "提示：如果您不确定，请从基础开始。然后在应用程序中运行高级。",
+          "bullets": {
+            "one": "含义是为这个确切的句子生成的",
+            "two": "你也明白为什么选择这个感觉了",
+            "three": "支持您选择的语言对"
+          }
+        },
+        "step3": {
+          "step": "步骤 3 • 保存并整理",
+          "title": "将有用的单词移入您的个人系统",
+          "body": "单词到达 VocOrbit 后，标记为收藏夹或添加到重复列表以进行主动学习。",
+          "source": "依靠我们的专家经验来帮助您的项目取得成功。",
+          "word": "专家",
+          "meaning": "具有特殊技能或知识的人",
+          "why": "它将在该项目背景下的经验描述为高度可靠和熟练。",
+          "hint": "提示：保持重复列表的焦点。 10 个活跃单词可以更好地保留。",
+          "bullets": {
+            "one": "重要单词的最爱列表",
+            "two": "主动记忆的重复列表",
+            "three": "学习状态让你的进步保持干净"
+          }
+        },
+        "step4": {
+          "step": "步骤 4 • 循环练习",
+          "title": "复习、练习并标记为已学",
+          "body": "使用练习模式和提醒，直到记忆力很强，然后将单词标记为已学。",
+          "source": "想要联系其他事情吗？",
+          "word": "伸出手",
+          "meaning": "联系某人",
+          "why": "在这种情况下，它是一个短语动词，意思是沟通，而不是身体接触。",
+          "hint": "提示：每天使用提醒和简短的课程来取得稳定的进展。",
+          "bullets": {
+            "one": "练习卡是根据您自己的话制作的",
+            "two": "每周分析显示弱点",
+            "three": "学到的单词自动离开重复队列"
+          }
+        }
+      }
+    },
+    "errors": {
+      "sessionExpired": "您的会话可能已过期。请重新登录。",
+      "cannotConnect": "无法到达服务器。检查您的连接并重试。",
+      "listLoadFailed": "无法加载单词列表。请再试一次。",
+      "searchLoadFailed": "无法加载搜索结果。请再试一次。",
+      "itemNotFound": "未找到文字记录。",
+      "reloginRequired": "请重新登录以继续。",
+      "favoriteActionFailed": "最喜欢的操作失败。请再试一次。",
+      "detailLoadFailed": "无法加载单词详细信息。",
+      "stateUpdateFailed": "无法更新状态。请再试一次。",
+      "analysisRequestFailed": "无法发送分析请求。",
+      "invalidModelOutput": "模型响应格式无效。请再试一次。",
+      "analysisTimeout": "分析超时。请再试一次。",
+      "advancedCreditInsufficient": "预付学分不足。",
+      "basicCreditInsufficient": "基础学分不足。",
+      "advancedAnalysisFailed": "无法完成高级分析。",
+      "basicAnalysisFailed": "基本分析无法完成。",
+      "repeatProgressUpdateFailed": "无法更新重复进度。请再试一次。",
+      "missingContext": "缺少分析所需的上下文。",
+      "selectedWordNotInSentence": "在上下文句子中找不到所选单词。",
+      "analysisFailedGeneric": "分析无法完成。请再试一次。",
+      "unexpected": "发生意外错误。"
+    },
+    "search": {
+      "title": "搜索",
+      "placeholder": "按单词、含义或解释搜索",
+      "loading": "正在加载单词...",
+      "emptyResult": "没有单词符合您的查询。",
+      "emptyHint": "开始在上面输入内容进行搜索。"
+    },
+    "showroom": {
+      "loading": "正在加载单词列表...",
+      "emptyTitle": "还没有说话",
+      "emptyBody": "通过 Word Insight 添加单词后，此列表将自动填充。",
+      "emptyCta": "公开公告",
+      "updateAvailableTitle": "新版本可用",
+      "updateAvailableBody": "点击即可更新并持续获取最新改进。",
+      "updateNow": "立即更新",
+      "repeatAdded": "{{word}} 添加到重复列表 ({{count}}/{{limit}})。",
+      "repeatRemoved": "{{word}} 从重复列表中删除 ({{count}}/{{limit}})。",
+      "repeatLimitReached": "您已达到重复列表限制 (10/10)。",
+      "repeatPermissionRequired": "提醒需要通知权限。启用通知以添加单词。",
+      "favoriteAdded": "{{word}} 添加到收藏夹。",
+      "favoriteRemoved": "{{word}} 从收藏夹中删除。",
+      "repeatCleared": "重复列表已清除。",
+      "repeatListTitle": "重复列表",
+      "repeatCount": "{{count}}/{{limit}} 字",
+      "repeatEmpty": "重复列表为空。使用下面的响铃按钮添加单词。",
+      "clearAll": "全部清除",
+      "done": "完毕",
+      "practice": "实践",
+      "accessibility": {
+        "showDetails": "显示详情",
+        "favoriteWord": "最喜欢的词",
+        "repeatWordLater": "稍后再重复这句话",
+        "openProfile": "打开个人资料",
+        "openRepeatList": "打开重复单词列表",
+        "openAnnouncements": "公开公告",
+        "openUpdate": "打开更新页面",
+        "dismissUpdate": "关闭更新通知",
+        "searchWords": "搜索词",
+        "switchToCard": "切换到卡片视图",
+        "switchToList": "切换到列表视图",
+        "retryShowroom": "尝试再次加载陈列室",
+        "closeRepeatList": "关闭重复列表",
+        "clearRepeatList": "清除重复列表",
+        "removeFromRepeat": "从重复列表中删除 {{word}}",
+        "practiceWord": "练习这个词",
+        "addWord": "添加单词"
+      },
+      "quickAdd": {
+        "eyebrow": "快速添加",
+        "title": "从语境中添加单词",
+        "body": "粘贴一句话，选中准确的单词并保存。",
+        "action": "添加单词",
+        "actionHint": "粘贴并选择"
+      }
+    },
+    "practiceHub": {
+      "title": "实践",
+      "sectionLabel": "实践",
+      "selectAnswer": "选择答案",
+      "modeBasic": "基本的",
+      "modeAdvanced": "先进的",
+      "loadingTitle": "加载目录",
+      "loadingMessage": "检查哪些运动类型适合您。",
+      "loadingQuestionsTitle": "准备练习题...",
+      "loadingQuestionsMessage": "根据您可用的词汇数据生成问题。",
+      "instructions": {
+        "matchSynonyms": "选择最接近的同义词。"
+      },
+      "resultCta": {
+        "backToPractice": "回到练习",
+        "seeResult": "查看结果",
+        "nextWord": "下一个词"
+      },
+      "result": {
+        "correctTitle": "没错！",
+        "incorrectTitle": "这是不正确的！",
+        "correctAnswerLabel": "正确答案：",
+        "usedInSentenceLabel": "用在一句话中：",
+        "sessionResultLabel": "会议结果"
+      },
+      "leavePrompt": {
+        "title": "已经离开了吗？",
+        "keepPlaying": "继续玩",
+        "leave": "离开",
+        "closePromptAccessibility": "关闭请假提示",
+        "leavePracticeAccessibility": "离开练习"
+      },
+      "hints": {
+        "availableCount": "{{count}} 可用字数",
+        "missingSynonyms": "同义词数据不可用",
+        "minActiveWords": "至少需要 2 个活跃词"
+      },
+      "tiles": {
+        "meaningMatch": "意义匹配",
+        "fillInGap": "填补空白",
+        "guessWord": "猜这个词",
+        "matchSynonyms": "匹配同义词"
+      },
+      "accessibility": {
+        "goBack": "回去",
+        "useMode": "使用 {{mode}} 模式",
+        "closePractice": "近距离练习"
+      },
+      "loadState": {
+        "noQuestions": {
+          "title": "还没有练习题",
+          "message": "您需要至少 2 个活跃单词才能开始练习。",
+          "actionLabel": "添加文字"
+        },
+        "unauthorized": {
+          "title": "需要登录",
+          "message": "您的会话可能已过期。重新登录以继续。",
+          "actionLabel": "登入"
+        },
+        "forbidden": {
+          "title": "该功能目前不可用",
+          "message": "检查您的计划或学分以继续。",
+          "actionLabel": "获得积分"
+        },
+        "rejected": {
+          "title": "此模式没有足够的数据",
+          "message": "添加更多单词并重试。",
+          "actionLabel": "添加文字"
+        },
+        "server": {
+          "title": "无法到达服务器",
+          "message": "检查您的连接并重试。",
+          "actionLabel": "重试"
+        },
+        "generic": {
+          "title": "无法开始练习",
+          "message": "发生意外错误。请再试一次。",
+          "actionLabel": "重试"
+        }
+      }
+    },
+    "announcements": {
+      "title": "公告",
+      "unreadCount": "{{count}} 未读",
+      "markAllRead": "标记全部已读",
+      "loading": "正在加载公告...",
+      "empty": "目前没有公告。",
+      "openLink": "打开链接",
+      "openAnnouncement": "公开公告：{{title}}",
+      "levelInfo": "信息",
+      "levelWarning": "警告",
+      "levelCritical": "批判的",
+      "loadFailed": "无法加载公告。请再试一次。",
+      "claimFailed": "奖励领取失败。请再试一次。",
+      "requirementNotMet": "尚未满足要求。先邀请朋友。",
+      "referralCodeMissing": "此帐户缺少推荐代码。",
+      "referralProgress": "推荐进度：{{current}}/{{required}}",
+      "shareInvite": "邀请朋友",
+      "referralShareMessage": "加入 VocOrbit。\n打开此链接：\n{{link}}",
+      "rewardText": "奖励：+{{amount}} {{creditType}} 积分",
+      "creditBasic": "基本的",
+      "creditAdvanced": "先进的",
+      "claimReward": "宣称",
+      "claimingReward": "声称...",
+      "rewardClaimed": "声称"
+    },
+    "forceUpdate": {
+      "title": "需要更新",
+      "body": "需要新版本才能继续使用 VocOrbit。",
+      "updateNow": "立即更新",
+      "checkAgain": "再次检查"
+    },
+    "profile": {
+      "title": "轮廓",
+      "accountDetailsTitle": "账户详情",
+      "accountDetailsSubtitle": "查看您的电子邮件和帐户信息。",
+      "settingsTitle": "设置",
+      "settingsSubtitle": "自定义文本大小和操作按钮顺序。",
+      "favoriteWordsTitle": "最喜欢的词",
+      "favoriteWordsSubtitle": "查看添加到收藏夹的单词。",
+      "learnedWordsTitle": "学到的单词",
+      "learnedWordsSubtitle": "查看标记为已学的单词。",
+      "weeklyAnalyticsTitle": "每周分析",
+      "weeklyAnalyticsSubtitle": "查看您最近 7 天的练习表现。",
+      "regionTitle": "地区",
+      "regionSubtitle": "当前： {{region}}",
+      "regionNotSelected": "未选择",
+      "emptyFavorites": "还没有最喜欢的词。",
+      "emptyLearned": "还没有学过单词。",
+      "loadingList": "正在加载列表...",
+      "logOut": "退出",
+      "accessibility": {
+        "goBack": "回去",
+        "openAccountDetails": "开设账户详细信息",
+        "openSettings": "打开设置",
+        "openFavoriteWords": "打开最喜欢的单词",
+        "openLearnedWords": "打开学过的单词",
+        "openWeeklyAnalytics": "打开每周分析",
+        "openRegion": "打开区域设置",
+        "logOut": "退出",
+        "playPronunciation": "播放 {{word}} 的发音",
+        "openDetailForWord": "打开 {{word}} 的详细信息",
+        "removeWord": "删除 {{word}}"
+      }
+    },
+    "settings": {
+      "title": "设置",
+      "languagePairTitle": "语言对",
+      "languagePairSubtitle": "改变您的母语和学习语言。",
+      "billingCreditsTitle": "账单和积分",
+      "billingCreditsSubtitle": "在此管理基本意义积分和 IAP 包。",
+      "quickLookupShortcutTitle": "Quick lookup shortcut",
+      "quickLookupShortcutSubtitle": "Change the global shortcut that opens the floating lookup window.",
+      "quickLookupShortcutLoading": "Loading shortcut...",
+      "quickLookupShortcutChange": "Change shortcut",
+      "quickLookupShortcutReset": "Reset to default",
+      "quickLookupShortcutListening": "Listening for shortcut...",
+      "quickLookupShortcutListeningHint": "Press the new key combination now. Press Esc to cancel.",
+      "quickLookupShortcutSaving": "Saving shortcut...",
+      "quickLookupShortcutUpdated": "Current shortcut: {{shortcut}}",
+      "quickLookupShortcutInvalid": "Use at least Cmd/Ctrl or Alt with another key.",
+      "quickLookupShortcutSaveFailed": "VocOrbit could not update the shortcut right now.",
+      "themeModeTitle": "主题",
+      "themeModeSubtitle": "选择浅色、深色或按照您的系统设置。",
+      "themeModeSystem": "系统设置",
+      "themeModeLight": "光照",
+      "themeModeDark": "深色",
+      "textSizeTitle": "文字大小",
+      "textSizeSubtitle": "调整词汇卡中的文本大小。",
+      "actionOrderTitle": "行动顺序",
+      "actionOrderSubtitle": "设置详细信息/收藏夹/重复按钮的顺序。",
+      "actionDetail": "细节",
+      "actionFavorite": "最喜欢的",
+      "actionRepeat": "重复",
+      "resetToDefaults": "重置为默认值",
+      "accessibility": {
+        "changeQuickLookupShortcut": "Change quick lookup shortcut",
+        "resetQuickLookupShortcut": "Reset quick lookup shortcut",
+        "goBack": "回去",
+        "openLanguagePreferences": "开放语言偏好",
+        "openBillingCredits": "开放式账单和积分",
+        "useSystemTheme": "系统主题",
+        "useLightTheme": "浅色主题",
+        "useDarkTheme": "使用深色主题.",
+        "decreaseTextSize": "减小文字大小",
+        "increaseTextSize": "增加文字大小",
+        "moveActionLeft": "向左移动 {{action}}",
+        "moveActionRight": "向右移动 {{action}}",
+        "resetSettings": "重置词汇设置"
+      }
+    },
+    "accountDetails": {
+      "title": "账户详情",
+      "emailLabel": "电子邮件",
+      "userIdLabel": "用户身份",
+      "regionLabel": "家乡地区",
+      "regionEndpointLabel": "区域端点",
+      "appVersionLabel": "应用程序版本",
+      "buildLabel": "内部版本号",
+      "platformLabel": "平台",
+      "osVersionLabel": "操作系统版本",
+      "accessibility": {
+        "goBack": "回去",
+        "deleteAccount": "永久删除帐户"
+      },
+      "deleteAccount": {
+        "sectionTitle": "删除帐户",
+        "sectionBody": "永久删除您的 VocOrbit 帐户以及与其关联的应用程序数据。此操作无法撤消。",
+        "action": "永久删除帐户",
+        "deleting": "正在删除帐户...",
+        "confirmTitle": "删除帐户？",
+        "confirmBody": "这将永久删除您的 VocOrbit 帐户和链接的应用程序数据。此操作无法撤消。",
+        "successTitle": "帐户已删除",
+        "successBody": "您的 VocOrbit 帐户已被永久删除。",
+        "missingUser": "找不到您的帐户 ID。请重新登录。",
+        "cannotConnect": "无法到达服务器。检查您的连接并重试。",
+        "sessionExpired": "您的会话已过期。请重新登录。",
+        "failed": "我们现在无法删除您的帐户。请再试一次。"
+      }
+    },
+    "iap": {
+      "title": "账单和积分",
+      "loading": "正在加载帐单详细信息...",
+      "currentSubscription": "当前订阅",
+      "currentStatus": "状态：{{status}}",
+      "currentPlan": "当前计划：{{plan}}",
+      "noActivePlan": "没有积极的计划",
+      "refresh": "刷新账单",
+      "basicCreditsTitle": "基本洞察学分",
+      "basicCreditsBody": "共享屏幕中的基本含义分析会消耗此信用。",
+      "plansTitle": "计划",
+      "plansBody": "选择一个计划并通过您的商店帐户完成付款。",
+      "noPlans": "找不到该平台的可购买计划。",
+      "planTopup": "每月充值： +{{basic}} 基本 · +{{advanced}} 高级",
+      "planCaps": "大写字母： {{basicCap}} 基本 · {{advancedCap}} 高级",
+      "priceLabel": "价格： {{price}}",
+      "buyNow": "立即购买",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfUse": "Terms of Use",
+      "manageSubscription": "Manage Subscription",
+      "buying": "正在处理购买...",
+      "purchaseCanceled": "购买取消。",
+      "purchaseApplied": "{{sku}} 激活成功。",
+      "alreadyOwnedRestoring": "此道具已被拥有。正在恢复您的购买……",
+      "restorePurchases": "恢复购买",
+      "restoring": "正在恢复购买...",
+      "restoreNoPurchases": "没有发现可以恢复的购买。",
+      "restoreNoApplicablePurchases": "无法应用可恢复的购买。",
+      "restoreApplied": "{{count}} 购买已恢复并已验证。",
+      "status": {
+        "none": "未订阅",
+        "pending": "待办的",
+        "active": "积极的",
+        "expired": "已到期",
+        "canceled": "取消",
+        "refunded": "已退款"
+      },
+      "errors": {
+        "unauthorized": "您的会话已过期。请重新登录。",
+        "cannotConnect": "无法到达服务器。检查您的连接并重试。",
+        "forbidden": "此购买无法应用于您的帐户。",
+        "generic": "计费请求失败。请再试一次。",
+        "purchaseFailed": "购买失败。请再试一次。",
+        "alreadyOwned": "此项目已在此帐户上拥有。",
+        "invalidReceipt": "无法验证商店收据。",
+        "iapUnavailable": "该设备目前不支持商店购买服务。"
+      },
+      "accessibility": {
+        "goBack": "回去",
+        "buyPlan": "购买 {{plan}} 计划",
+        "restorePurchases": "恢复之前的购买",
+        "refresh": "刷新计费和订阅状态"
+      },
+      "desktop": {
+        "subtitle": "在这里查看您当前的余额。新的购买和订阅更改将在移动设备上继续进行。",
+        "desktopBadge": "桌面视图",
+        "phoneOnlyBadge": "购买电话",
+        "balanceTitle": "您当前的余额",
+        "balanceBody": "Desktop 可以让您的可用积分和订阅状态保持可见，因此您可以在继续学习流程之前检查您的帐户。",
+        "basicAvailable": "基础学分",
+        "advancedAvailable": "高级学分",
+        "freeCredits": "自由的",
+        "paidCredits": "有薪酬的",
+        "noPlanBody": "此帐户目前没有有效的移动计费计划。您仍然可以使用此处已有的任何积分。",
+        "mobileTitle": "继续在手机上购买",
+        "mobileBody": "积分购买和订阅更改可使用您的 App Store 或 Google Play 帐户在移动应用程序内完成。",
+        "storeLabel": "店铺：{{store}}",
+        "renewsOn": "更新 {{date}}",
+        "expiresOn": "结束于 {{date}}",
+        "updatedOn": "上次同步：{{date}}",
+        "stepOpenPhone": "使用同一个账号在手机上打开VocOrbit。",
+        "stepOpenBilling": "转至个人资料 > 账单和积分。",
+        "stepFinishPurchase": "在那里购买积分或管理您的订阅，然后返回此处并刷新。",
+        "mobileHint": "将移动购买应用到同一帐户后，您的信用余额会在此处更新。"
+      }
+    },
+    "weeklyAnalytics": {
+      "title": "每周分析",
+      "modeAll": "全部",
+      "modeBasic": "基本的",
+      "modeAdvanced": "先进的",
+      "loading": "正在加载每周分析...",
+      "summaryTitle": "总结（7天）",
+      "sessions": "会议",
+      "completed": "完全的",
+      "answered": "已回答",
+      "accuracy": "准确性",
+      "activeDays": "活跃天数",
+      "streak": "条纹",
+      "dailyTrend": "每日趋势",
+      "byQuestionType": "按问题类型",
+      "byMode": "按模式",
+      "weakItems": "弱项",
+      "noWeakItems": "本周没有发现明显的薄弱词语。",
+      "weakItemMeta": "错误：{{wrongAnswers}} · 准确度：{{accuracyPercent}}%",
+      "questionTypeMeaningMatch": "意义匹配",
+      "questionTypeGuessWord": "猜字",
+      "questionTypeFillInGap": "填补空白",
+      "questionTypeMatchSynonym": "匹配同义词",
+      "errors": {
+        "unauthorized": "您的会话可能已过期。请重新登录。",
+        "cannotConnect": "无法到达服务器。检查您的连接并重试。",
+        "loadFailed": "无法加载每周分析。请再试一次。"
+      },
+      "accessibility": {
+        "goBack": "回去",
+        "filterByMode": "按 {{mode}} 过滤",
+        "retry": "重试分析请求"
+      }
+    },
+    "detail": {
+      "closeDetails": "关闭单词详细信息",
+      "loadingDetail": "正在加载单词详细信息...",
+      "detailLoadFailedTitle": "无法加载详细信息",
+      "statusLearned": "学到了",
+      "statusActive": "积极的",
+      "markAsLearned": "标记为已学习",
+      "moveBackToActive": "移回活动状态",
+      "buyAdvancedCredits": "购买高级积分",
+      "buyBasicCredits": "购买基本积分",
+      "buyCredits": "购买积分",
+      "whyThisSense": "为什么有这种感觉",
+      "examples": "示例",
+      "synonyms": "同义词",
+      "antonyms": "反义词",
+      "collocations": "搭配",
+      "alternativeMeanings": "其他含义",
+      "usageNotes": "使用说明",
+      "noSynonyms": "还没有同义词数据。",
+      "stats": "统计数据",
+      "encountersAndLastMode": "遭遇：{{encounters}} |最后模式：{{mode}}",
+      "nextReminder": "下次提醒",
+      "currentPlan": "当前计划：{{due}}",
+      "reviewHint": "忘记：+10 分钟，困难：+1 小时，良好：从+1 天开始增长。",
+      "runAdvanced": "运行高级分析",
+      "reviewForgot": "忘记了",
+      "reviewHard": "难的",
+      "reviewGood": "好的",
+      "reviewOptionAccessibility": "已选择 {{title}}。下一篇评论在{{delay}}。",
+      "repeatUnscheduled": "未安排",
+      "repeatNow": "现在",
+      "repeatAfterMinutes": "{{count}} 分钟",
+      "repeatAfterHours": "{{count}} 小时",
+      "repeatAfterDays": "{{count}} 天",
+      "repeatAfterWeeks": "{{count}} 周",
+      "repeatInMinutes": "在 {{count}} 分钟内",
+      "repeatInHours": "在 {{count}} 小时内",
+      "repeatInDays": "在 {{count}} 天",
+      "repeatInWeeks": "在 {{count}} 周内",
+      "repeatNotificationTitle": "审核时间：{{word}}",
+      "repeatNotificationBody": "复习单词 {{word}}。",
+      "reportIssue": "举报错误意思",
+      "reportIssueAccessibility": "报告 {{word}} 的错误含义",
+      "deleteWord": "删除单词",
+      "deleteWordAccessibility": "软删除 {{word}}",
+      "deleteConfirmTitle": "删除这个词？",
+      "deleteConfirmBody": "“{{word}}”将从您的列表中删除。您可以稍后再次添加。",
+      "deleteConfirmCancel": "取消",
+      "deleteConfirmAction": "是的，删除"
+    },
+    "quickLookup": {
+      "title": "Quick lookup",
+      "subtitle": "Read a meaning without leaving the app you are using.",
+      "shortcutHint": "Shortcut: {{shortcut}}",
+      "loadingSession": "Preparing your VocOrbit session...",
+      "authRequiredTitle": "Sign in required",
+      "authRequiredBody": "Open VocOrbit, sign in, then use the quick lookup shortcut again.",
+      "inputLabel": "Copied text",
+      "inputPlaceholder": "Paste a sentence or paragraph here.",
+      "selection": {
+        "title": "Choose the target word",
+        "empty": "Paste text first.",
+        "pending": "Click the exact word inside the text.",
+        "selected": "Selected: {{word}}"
+      },
+      "resultTitle": "Basic insight",
+      "savedHint": "This lookup is already saved to your library.",
+      "browserHint": "Open this page from VocOrbit Desktop to use the floating lookup window.",
+      "actions": {
+        "pasteClipboard": "Paste clipboard",
+        "readingClipboard": "Reading clipboard...",
+        "runBasicLookup": "Run basic lookup",
+        "runningLookup": "Looking up...",
+        "openVocOrbit": "Open VocOrbit",
+        "close": "Close"
+      },
+      "errors": {
+        "signInRequiredTitle": "Sign in required",
+        "signInRequiredBody": "Your session is not ready. Open VocOrbit and sign in again.",
+        "creditsRequiredTitle": "Basic credits required",
+        "creditsRequiredBody": "Your account cannot run a basic lookup right now.",
+        "timeoutTitle": "Request timed out",
+        "timeoutBody": "The lookup took too long. Try again with the same text.",
+        "connectionTitle": "Connection problem",
+        "connectionBody": "VocOrbit could not reach the server. Check your connection and retry.",
+        "lookupFailedTitle": "Lookup failed",
+        "lookupFailedBody": "VocOrbit could not finish this insight request.",
+        "clipboardUnavailableTitle": "Clipboard unavailable",
+        "clipboardUnavailableBody": "Copy the text first, then trigger quick lookup again."
+      }
+    },
+    "report": {
+      "title": "报告含义",
+      "subtitle": "如果“{{word}}”在这种情况下看起来有问题，请告诉我们出了什么问题。",
+      "messageLabel": "看起来有什么问题吗？",
+      "messagePlaceholder": "例：这个意思与句子不符。它应该描述通信，而不是位置。",
+      "charactersLeft": "还剩 {{count}} 个字符",
+      "submit": "发送报告",
+      "successTitle": "报告已发送",
+      "successBody": "感谢您的反馈。我们将审查该项目。",
+      "backToDetail": "返回单词详细信息",
+      "errors": {
+        "unauthorized": "您的会话已过期。请重新登录。",
+        "cannotConnect": "无法到达服务器。检查您的连接并重试。",
+        "itemNotFound": "找不到单词项目。",
+        "submitFailed": "无法提交报告。请再试一次。"
+      },
+      "accessibility": {
+        "goBack": "回去",
+        "submit": "发送问题报告",
+        "backToDetail": "返回单词详细信息"
+      }
+    },
+    "capture": {
+      "backButton": "图书馆",
+      "headerTitle": "添加单词",
+      "headerBody": "粘贴一个句子并选择您要保存的单词。",
+      "seedWordLabel": "正在寻找：{{word}}",
+      "pasteHero": {
+        "title": "粘贴复制的文本",
+        "body": "复制句子或段落，然后粘贴以打开选择器。",
+        "bodyWithWord": "复制包含“{{word}}”的句子，然后粘贴以打开选择器。",
+        "hint": "粘贴后选择器会自动打开。"
+      },
+      "picker": {
+        "title": "选择文本中的单词",
+        "body": "单击下面的确切单词。如果复制了不同的句子，请重新粘贴。",
+        "badge": "单词选择器",
+        "hint": "VocOrbit 根据此查找自动创建单词卡。"
+      },
+      "status": {
+        "pasteFirst": "粘贴复制的文本以开始。",
+        "selectedWord": "所选字：{{word}}",
+        "seedWordMissing": "粘贴包含“{{word}}”的句子或选择下面的另一个单词。",
+        "selectWord": "单击下面的确切单词继续。"
+      },
+      "actions": {
+        "pasteCopiedText": "粘贴复制的文本",
+        "pasteAgain": "再次粘贴",
+        "clear": "清除",
+        "readingClipboard": "正在读取剪贴板...",
+        "reading": "阅读...",
+        "analyzeAndSave": "分析并保存",
+        "loadingMeaning": "获取基本含义...",
+        "openSavedWord": "打开保存的单词",
+        "backToLibrary": "返回图书馆",
+        "pickAnotherWord": "选择另一个词"
+      },
+      "loading": {
+        "title": "运行基本洞察",
+        "body": "VocOrbit 正在将所选单词与该句子进行匹配。"
+      },
+      "result": {
+        "title": "基本含义",
+        "savedFallback": "保存到您的图书馆。",
+        "contextMeaning": "上下文含义",
+        "whyThisMeaning": "为什么有这个意思"
+      },
+      "problems": {
+        "clipboardUnavailableTitle": "剪贴板不可用",
+        "clipboardUnavailableBody": "在此浏览器上下文中剪贴板访问被阻止。手动粘贴句子。",
+        "contextRequiredTitle": "需要上下文",
+        "contextRequiredBody": "在选择单词之前粘贴句子或短段落。",
+        "selectWordTitle": "选择文本中的一个单词",
+        "selectWordBody": "在运行查找之前单击文本块内的确切单词。",
+        "signInRequiredTitle": "需要登录",
+        "signInRequiredBody": "您的会话已过期。再次打开 VocOrbit 并登录，然后重试此查找。",
+        "basicCreditsRequiredTitle": "所需基本学分",
+        "basicCreditsRequiredBody": "您的帐户现在无法运行基本查找。",
+        "requestTimedOutTitle": "请求超时",
+        "requestTimedOutBody": "查找时间太长。用同样的句子再试一次。",
+        "connectionProblemTitle": "连接问题",
+        "connectionProblemBody": "VocOrbit 无法到达服务器。检查您的连接并重试。",
+        "lookupFailedTitle": "查找失败",
+        "lookupFailedBody": "VocOrbit 无法完成此洞察请求。",
+        "lookupIncompleteTitle": "查找不完整",
+        "lookupIncompleteBody": "VocOrbit 返回意外响应。再试一次。"
+      }
+    }
+  }
+}
+
+export default zhHans

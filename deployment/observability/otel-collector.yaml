@@ -1,0 +1,47 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+
+processors:
+  filter/drop-noise-traces:
+    error_mode: ignore
+    traces:
+      span:
+        - 'name == "GET /health"'
+        - 'name == "GET /healthz"'
+        - 'name == "GET /ready"'
+        - 'name == "GET /metrics"'
+        - 'name == "Request"'
+        - 'name == "Parse"'
+        - 'name == "Transform"'
+        - 'name == "BeforeHandle"'
+        - 'name == "Handle"'
+        - 'name == "AfterHandle"'
+        - 'name == "MapResponse"'
+        - 'not (IsMatch(name, "^(GET|POST|PUT|PATCH|DELETE|OPTIONS|HEAD) /") or IsMatch(name, "^(auth[.]|word_insight[.]|ai[.]|db[.]|redis[.]|outbox[.])") or name == "Root")'
+  batch:
+
+exporters:
+  otlphttp/jaeger:
+    endpoint: http://jaeger:4318
+
+extensions:
+  health_check:
+    endpoint: 0.0.0.0:13133
+
+service:
+  extensions:
+    - health_check
+  pipelines:
+    traces:
+      receivers:
+        - otlp
+      processors:
+        - filter/drop-noise-traces
+        - batch
+      exporters:
+        - otlphttp/jaeger

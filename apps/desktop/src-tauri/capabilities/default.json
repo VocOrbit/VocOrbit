@@ -1,0 +1,17 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Default capability set for the main desktop window.",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "notification:default",
+    "allow-read-clipboard-text",
+    "allow-focus-main-window",
+    "allow-close-quick-lookup-window",
+    "allow-get-quick-lookup-shortcut",
+    "allow-set-quick-lookup-shortcut",
+    "allow-schedule-repeat-notification",
+    "allow-cancel-repeat-notification"
+  ]
+}

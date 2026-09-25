@@ -1,0 +1,22 @@
+export type WordInsight = {
+  word: string;
+  surface?: string;
+  lemma: string;
+  phonetic?: string;
+  sourceLang: string;
+  targetLang: string;
+  partOfSpeech: string;
+  sourceMeaning?: string;
+  definitionL2?: string;
+  translationL1?: string;
+  whyThisSense?: string;
+  meaning: string;
+  shortExplanation: string;
+  exampleSentence: string;
+  translatedExample: string;
+  synonyms: string[];
+  confidence: number;
+  provider: string;
+  model: string;
+  details?: Record<string, unknown>;
+};

@@ -1,0 +1,5 @@
+env/.env.prod
+nginx/ssl/*
+!nginx/ssl/.gitkeep
+backups/*
+!backups/.gitkeep

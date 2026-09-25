@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-get-quick-lookup-shortcut"
+description = "Enables the get_quick_lookup_shortcut command without any pre-configured scope."
+commands.allow = ["get_quick_lookup_shortcut"]
+
+[[permission]]
+identifier = "deny-get-quick-lookup-shortcut"
+description = "Denies the get_quick_lookup_shortcut command without any pre-configured scope."
+commands.deny = ["get_quick_lookup_shortcut"]

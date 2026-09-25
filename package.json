@@ -1,0 +1,45 @@
+{
+  "name": "vocorbit-server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch apps/api/src/main.ts",
+    "debug": "bun --inspect-wait=127.0.0.1:6499 apps/api/src/main.ts",
+    "debug:brk": "bun --inspect-brk=127.0.0.1:6499 apps/api/src/main.ts",
+    "start": "bun dist/main.js",
+    "build": "bun build apps/api/src/main.ts --outdir dist --target bun --sourcemap",
+    "test": "bun test ./apps/api ./modules ./infra ./packages",
+    "lint": "biome check . && bun run check:boundaries",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "migrate": "bun run infra/database/src/migrate.ts",
+    "seed": "bun run infra/database/src/seed.ts",
+    "test-client": "bun run scripts/test-client.ts",
+    "e2e:agenda": "bun run scripts/e2e-agenda.ts",
+    "worker:word-insight": "bun apps/api/src/word-insight-worker.ts",
+    "check:boundaries": "bun run scripts/check-boundaries.ts",
+    "directus:up": "docker compose up -d directus",
+    "directus:down": "docker compose stop directus",
+    "directus:logs": "docker compose logs -f directus"
+  },
+  "dependencies": {
+    "@elysiajs/cors": "^1.2.0",
+    "@elysiajs/openapi": "^1.4.14",
+    "@elysiajs/opentelemetry": "^1.4.10",
+    "drizzle-orm": "^0.33.0",
+    "elysia": "^1.2.0",
+    "firebase-admin": "^13.5.0",
+    "jose": "^6.0.8",
+    "nats": "^2.29.3",
+    "postgres": "^3.4.4",
+    "sanitize-html": "^2.13.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "bun-types": "^1.1.25",
+    "drizzle-kit": "^0.24.2",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "bun": ">=1.3.0"
+  }
+}
